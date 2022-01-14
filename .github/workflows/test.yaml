@@ -22,4 +22,3 @@ jobs:
 
       - name: Run tests
         run: swift test
-        - uses: fwal/setup-swift@v1
