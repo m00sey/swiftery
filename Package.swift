@@ -13,6 +13,8 @@ let package = Package(
     ],
     dependencies: [
         .package(name: "Sodium", url: "https://github.com/jedisct1/swift-sodium.git", from: "0.9.1"),
+        .package(name: "SwiftLMDB", url: "https://github.com/agisboye/SwiftLMDB.git", from: "2.0.0"),
+        .package(name: "BLAKE3", url: "https://github.com/nixberg/blake3-swift", branch: "master"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -21,6 +23,8 @@ let package = Package(
             name: "swiftery",
             dependencies: [
                 "Sodium",
+                "SwiftLMDB",
+                "BLAKE3",
             ]),
         .testTarget(
             name: "swifteryTests",

@@ -1,5 +1,6 @@
 import Sodium
 import Foundation
+import BLAKE3
 
 public struct Swiftery {
     public private(set) var text = "Hello, World!"
@@ -18,6 +19,7 @@ public struct Swiftery {
         print(pri.count)
         print(sodium.utils.bin2base64(publicKey, variant: .URLSAFE_NO_PADDING)!)
 
-        print()
+        print(BLAKE3.hash(contentsOf: publicKey))
+        print(sodium.utils.bin2base64(BLAKE3.hash(contentsOf: publicKey), variant: .URLSAFE_NO_PADDING)!)
     }
 }
